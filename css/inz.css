@@ -1,0 +1,667 @@
+	@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600);
+	@import url(http://fonts.googleapis.com/css?family=Oswald:400,300);
+	body {
+	    background: url(http://www.mdrop.pl/inz/images/background1.jpg) no-repeat;
+	    background-attachment: fixed;
+	    background-size: cover;
+	    background-position: 50% 50%;
+	    font-family: 'Open Sans', sans-serif;
+	}
+	.row {
+	    margin-right: -10px;
+	    margin-left: -10px;
+	}
+	a,
+	a:hover,
+	a:focus,
+	a:active,
+	a.active {
+	    outline: 0;
+	}
+	ul,
+	ol {
+	    margin: 0;
+	    padding: 0;
+	}
+	li {
+	    list-style: none;
+	}
+	a {
+	    color: #FF432E;
+	    text-decoration: none;
+	}
+	a:hover {
+	    text-decoration: none;
+	}
+	p {
+	    font-family: 'Open Sans', sans-serif;
+	    font-size: 13px;
+	    line-height: 21px;
+	}
+	h4 {
+	    color: black !important;
+	    /*font-style: italic;*/
+	    
+	    font-size: 16px;
+	    font-family: 'Oswald', sans-serif;
+	    text-transform: none;
+	}
+	.section-title h3 {
+	    color: #666 !important;
+	    //font-style: italic;
+	    font-size: 28px;
+	    font-family: 'Oswald', sans-serif;
+	    text-transform: none;
+	}
+	.section-title p {
+	    padding-bottom: 60px;
+	    color: #999;
+	    font-size: 18px;
+	    //font-style: italic;
+	    font-weight: 300;
+	}
+	.logo h1 {
+	    font-family: 'Lobster', cursive;
+	    color: #fff;
+	    font-size: 24px;
+	}
+	.logo span {
+	    color: #999;
+	}
+	/*-----KOLORY-----*/
+	
+	.blue {
+	    background: #28ABE3;
+	}
+	.gray {
+	    background: #989898;
+	}
+	.green {
+	    background: #72bf48;
+	}
+	.red {
+	    background: #FF432E;
+	}
+	.light-red {
+	    background: #FB6648;
+	}
+	.light-orange {
+	    background: #FA6900;
+	}
+	.blue-dark {
+	    background: #323284;
+	}
+	.color {
+	    background: #0ECEAB;
+	}
+	/*----KONIEC-KOLORY----*/
+	
+	/*---SEKCJA-GŁÓWNA-STRONY----*/
+	
+	.mainbody-section {
+	    padding-top: 15px;
+	    padding-bottom: 10px;
+	    margin-left: 10px;
+	    margin-right: 10px;
+	}
+	/*----- KONIEC-SEKCJI-GŁÓWNEJ-----*/
+	
+	/*------OŚWIETLENIE------*/
+	
+	.przycisk {
+	    color: #fff;
+	    margin-bottom: 10px;
+	    -webkit-transition: all 0.3s;
+	    transition: all 0.3s;
+	    border-radius: 10px 10px 10px 10px;
+	    transition: box-shadow 0.5s;
+	    cursor: pointer;
+	}
+	.przycisk:hover {
+	    box-shadow: 5px 0px 40px rgba(0, 0, 0, .6);
+	}
+	.przycisk i {
+	    color: #fff;
+	    display: block;
+	    -webkit-transition: all 0.3s;
+	    transition: all 0.3s;
+	}
+	.przycisk p {
+	    font-family: 'Oswald', sans-serif;
+	    font-weight: 300;
+	    font-size: 15px;
+	}
+	.przycisk i {
+	    font-size: 30px;
+	    padding-bottom: 0px;
+	}
+	.przycisk:hover i {
+	    text-decoration: none;
+	    //color: #333;
+	    animation: wobble;
+	    -webkit-animation: wobble;
+	    animation-duration: 1000ms;
+	    -webkit-animation-duration: 1000ms;
+	}
+	/*-----KONIEC-OŚWIETLENIE------*/
+	
+	/*------DRZWI--------*/
+	
+	.przycisk-door {
+	    color: #fff;
+	    margin-bottom: 10px;
+	    -webkit-transition: all 0.3s;
+	    transition: all 0.3s;
+	    border-radius: 2px 2px 2px 2px;
+	    transition: box-shadow 0.5s;
+	    cursor: default;
+	}
+	.przycisk-door i {
+	    color: #fff;
+	    display: block;
+	    -webkit-transition: all 0.3s;
+	    transition: all 0.3s;
+	}
+	.przycisk-door p {
+	    font-family: 'Oswald', sans-serif;
+	    font-weight: 300;
+	    font-size: 15px;
+	}
+	.przycisk-door i {
+	    font-size: 30px;
+	    padding-bottom: 0px;
+	}
+	.przycisk-door:hover i {
+	    text-decoration: none;
+	    //color: #333;
+	    cursor: default;
+	}
+	/*------KONIEC DRZWI-------*/
+	
+	/*-------ALARM--------*/
+	
+	.przycisk-alarm {
+	    padding-top: 5px;
+	    color: #fff;
+	    margin-bottom: 10px;
+	    -webkit-transition: all 0.3s;
+	    transition: all 0.3s;
+	    border-radius: 20px 20px 20px 20px;
+	    transition: box-shadow 0.5s;
+	    cursor: pointer;
+	}
+	.przycisk-alarm:hover {
+	    box-shadow: 5px 0px 40px rgba(0, 0, 0, .6);
+	}
+	.przycisk-alarm i {
+	    color: #fff;
+	    display: block;
+	    -webkit-transition: all 0.3s;
+	    transition: all 0.3s;
+	}
+	.przycisk-alarm p {
+	    font-family: 'Oswald', sans-serif;
+	    font-weight: 300;
+	    font-size: 15px;
+	}
+	.przycisk-alarm i {
+	    font-size: 24px;
+	    padding-bottom: 0px;
+	}
+	.przycisk-alarm:hover i {
+	    text-decoration: none;
+	    //color: #333;
+	    animation: wobble;
+	    -webkit-animation: wobble;
+	    animation-duration: 1000ms;
+	    -webkit-animation-duration: 1000ms;
+	}
+	/*-----KONIEC-ALARM-------*/
+	
+	/*-------PIR--------*/
+	
+	.przycisk-pir {
+	    color: #fff;
+	    -webkit-transition: all 0.3s;
+	    transition: all 0.3s;
+	    border: 1px solid #000;
+	    transition: box-shadow 0.5s;
+	    cursor: default;
+	    width: 40px;
+	    height: 20px;
+	}
+	/*------KONIEC-PIR---------*/
+	
+	/*-------KLIMATYZACJA--------*/
+	
+	.przycisk-klima {
+	    padding-top: 5px;
+	    color: #fff;
+	    margin-bottom: 10px;
+	    -webkit-transition: all 0.3s;
+	    transition: all 0.3s;
+	    border-radius: 20px 20px 20px 20px;
+	    transition: box-shadow 0.5s;
+	    cursor: pointer;
+	    width: 150px;
+	}
+	.przycisk-klima:hover {
+	    box-shadow: 5px 0px 40px rgba(0, 0, 0, .6);
+	}
+	.przycisk-klima i {
+	    color: #fff;
+	    display: block;
+	    -webkit-transition: all 0.3s;
+	    transition: all 0.3s;
+	}
+	.przycisk-klima p {
+	    font-family: 'Oswald', sans-serif;
+	    font-weight: 300;
+	    font-size: 15px;
+	}
+	.przycisk-klima i {
+	    font-size: 24px;
+	    padding-bottom: 0px;
+	}
+	.przycisk-klima:hover i {
+	    text-decoration: none;
+	    //color: #333;
+	    animation: wobble;
+	    -webkit-animation: wobble;
+	    animation-duration: 1000ms;
+	    -webkit-animation-duration: 1000ms;
+	}
+	/*-----KONIEC-KLIMATYZACJA-------*/
+	
+	.przycisk-stanKlima {
+	    padding-top: 5px;
+	    color: #fff;
+	    margin-bottom: 10px;
+	    -webkit-transition: all 0.3s;
+	    transition: all 0.3s;
+	    border-radius: 20px 20px 20px 20px;
+	    transition: box-shadow 0.5s;
+	    cursor: default;
+	    width: 150px;
+	}
+	.przycisk-stanKlima:hover {
+	    box-shadow: 5px 0px 40px rgba(0, 0, 0, .6);
+	}
+	.przycisk-stanKlima i {
+	    color: #fff;
+	    display: block;
+	    -webkit-transition: all 0.3s;
+	    transition: all 0.3s;
+	}
+	.przycisk-stanKlima p {
+	    font-family: 'Oswald', sans-serif;
+	    font-weight: 300;
+	    font-size: 15px;
+	}
+	.przycisk-stanKlima i {
+	    font-size: 24px;
+	    padding-bottom: 0px;
+	}
+	/*---------------------*/
+	
+	.przycisk-pomiar_temp {
+	    padding-top: 5px;
+	    padding-bottom: 5px;
+	    color: #fff;
+	    margin-bottom: 10px;
+	    -webkit-transition: all 0.3s;
+	    transition: all 0.3s;
+	    border-radius: 35px 35px 35px 35px;
+	    transition: box-shadow 0.5s;
+	    cursor: default;
+	    width: 150px;
+	}
+	.przycisk-pomiar_temp:hover {
+	    box-shadow: 5px 0px 40px rgba(0, 0, 0, .6);
+	}
+	.przycisk-pomiar_temp i {
+	    color: #fff;
+	    display: block;
+	    -webkit-transition: all 0.3s;
+	    transition: all 0.3s;
+	}
+	.przycisk-pomiar_temp p {
+	    padding-top: 10px;
+	    font-family: 'Oswald', sans-serif;
+	    font-weight: 300;
+	    font-size: 35px;
+	}
+	.przycisk-pomiar_temp i {
+	    font-size: 24px;
+	    padding-bottom: 0px;
+	}
+	/*-------BRAMA--------*/
+	
+	.przycisk-brama {
+	    padding-top: 5px;
+	    color: #fff;
+	    margin-bottom: 10px;
+	    -webkit-transition: all 0.3s;
+	    transition: all 0.3s;
+	    border-radius: 20px 20px 20px 20px;
+	    transition: box-shadow 0.5s;
+	    cursor: pointer;
+	}
+	.przycisk-brama:hover {
+	    box-shadow: 5px 0px 40px rgba(0, 0, 0, .6);
+	}
+	.przycisk-brama i {
+	    color: #fff;
+	    display: block;
+	    -webkit-transition: all 0.3s;
+	    transition: all 0.3s;
+	}
+	.przycisk-brama p {
+	    font-family: 'Oswald', sans-serif;
+	    font-weight: 300;
+	    font-size: 15px;
+	}
+	.przycisk-brama i {
+	    font-size: 24px;
+	    padding-bottom: 0px;
+	}
+	.przycisk-brama:hover i {
+	    text-decoration: none;
+	    //color: #333;
+	    animation: wobble;
+	    -webkit-animation: wobble;
+	    animation-duration: 1000ms;
+	    -webkit-animation-duration: 1000ms;
+	}
+	/*-----KONIEC-BRAMA-------*/
+	
+	.przycisk-roleta {
+	    padding-top: 5px;
+	    color: #fff;
+	    margin-bottom: 10px;
+	    -webkit-transition: all 0.3s;
+	    transition: all 0.3s;
+	    border-radius: 20px 20px 20px 20px;
+	    transition: box-shadow 0.5s;
+	    cursor: pointer;
+	}
+	.przycisk-roleta:hover {
+	    box-shadow: 5px 0px 40px rgba(0, 0, 0, .6);
+	}
+	.przycisk-roleta i {
+	    color: #fff;
+	    display: block;
+	    -webkit-transition: all 0.3s;
+	    transition: all 0.3s;
+	}
+	.przycisk-roleta p {
+	    font-family: 'Oswald', sans-serif;
+	    font-weight: 300;
+	    font-size: 15px;
+	}
+	.przycisk-roleta i {
+	    font-size: 20px;
+	    padding-bottom: 0px;
+	}
+	.przycisk-roleta:hover i {
+	    text-decoration: none;
+	    //color: #333;
+	    animation: wobble;
+	    -webkit-animation: wobble;
+	    animation-duration: 1000ms;
+	    -webkit-animation-duration: 1000ms;
+	}
+	/*------------------------------*/
+	
+	.przycisk-monitoring {
+	    padding-top: 5px;
+	    color: #fff;
+	    margin-bottom: 10px;
+	    -webkit-transition: all 0.3s;
+	    transition: all 0.3s;
+	    border-radius: 20px 20px 20px 20px;
+	    transition: box-shadow 0.5s;
+	    cursor: pointer;
+	}
+	.przycisk-monitoring:hover {
+	    box-shadow: 5px 0px 40px rgba(0, 0, 0, .6);
+	}
+	.przycisk-monitoring i {
+	    color: #fff;
+	    display: block;
+	    -webkit-transition: all 0.3s;
+	    transition: all 0.3s;
+	}
+	.przycisk-monitoring p {
+	    font-family: 'Oswald', sans-serif;
+	    font-weight: 300;
+	    font-size: 15px;
+	}
+	.przycisk-monitoring i {
+	    font-size: 20px;
+	    padding-bottom: 0px;
+	}
+	.przycisk-monitoring:hover i {
+	    text-decoration: none;
+	    //color: #333;
+	    animation: wobble;
+	    -webkit-animation: wobble;
+	    animation-duration: 1000ms;
+	    -webkit-animation-duration: 1000ms;
+	}
+	/*------PANELE------------*/
+	
+	.panel-body {
+	    padding: 15px;
+	}
+	.page-header {
+	    padding-bottom: 10px;
+	    margin: 0 0 30px;
+	    border-bottom: 1px solid #eee;
+	}
+	.panel-default {
+	    border-color: black;
+	    background: url(http://www.mdrop.pl/inz/images/back.jpg) no-repeat;
+	    background-attachment: fixed;
+	    background-size: cover;
+	    background-position: 50% 50%;
+	    font-family: 'Open Sans', sans-serif;
+	    border-radius: 10px;
+	}
+	.panel-heading {
+	    border-radius: 10px;
+	    padding: 5px 15px;
+	}
+	.panel {
+	    margin-bottom: 20px;
+	    border: 1px solid transparent;
+	    border-radius: 20px;
+	    transition: box-shadow 0.5s;
+	}
+	.panel:hover {
+	    box-shadow: 5px 0px 40px rgba(0, 0, 0, .4);
+	}
+	/*-----KONIEC-PANELE--------*/
+	
+	/*------------------INFO--------------*/
+	
+	.przycisk-informacje {
+	    padding-top: 5px;
+	    padding-bottom: 5px;
+	    color: #fff;
+	    margin-bottom: 2px;
+	    -webkit-transition: all 0.3s;
+	    transition: all 0.3s;
+	    border-radius: 35px 35px 35px 35px;
+	    transition: box-shadow 0.5s;
+	    cursor: default;
+	}
+	.przycisk-informacje:hover {
+	    box-shadow: 5px 0px 40px rgba(0, 0, 0, .6);
+	}
+	.przycisk-informacje i {
+	    color: #fff;
+	    display: block;
+	    -webkit-transition: all 0.3s;
+	    transition: all 0.3s;
+	}
+	.przycisk-informacje p {
+	    padding-top: 10px;
+	    font-family: 'Oswald', sans-serif;
+	    font-weight: 300;
+	    font-size: 24px;
+	}
+	.przycisk-informacje i {
+	    font-size: 24px;
+	    padding-bottom: 0px;
+	}
+	/*------------------KONIEC-INFO--------------*/
+	
+	.przycisk-godzina {
+	    color: #fff;
+	    margin-bottom: 10px;
+	    -webkit-transition: all 0.3s;
+	    transition: all 0.3s;
+	    border-radius: 10px 10px 10px 10px;
+	    transition: box-shadow 0.5s;
+	    cursor: default;
+	}
+	.przycisk-godzina i {
+	    color: #fff;
+	    display: block;
+	    -webkit-transition: all 0.3s;
+	    transition: all 0.3s;
+	}
+	.przycisk-godzina p {
+	    font-family: 'Oswald', sans-serif;
+	    font-weight: 300;
+	    font-size: 15px;
+	}
+	.przycisk-godzina i {
+	    font-size: 30px;
+	    padding-bottom: 0px;
+	}
+	.przycisk-godzina:hover i {
+	    text-decoration: none;
+	    //color: #333;
+	    cursor: default;
+	}
+
+	.thumbnail{
+		position:relative; 
+		margin-bottom: 1px;
+		display: block;
+		padding: 4px;
+		line-height: 1.42857143;
+		background-color: #fff;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		-webkit-transition: border .2s ease-in-out;
+		-o-transition: border .2s ease-in-out;
+		transition: border .2s ease-in-out;
+	}
+	
+	.thumbnail .caption {
+	padding: 1px;
+		color: #333;
+	}
+	
+	.post-content #salon_light{   
+		top:25%;
+		left:9%;
+		position: absolute;
+	}
+
+	.post-content #room1_light {		
+		top:10%;
+		left:30%;
+		position: absolute;
+	}
+
+	.post-content #room2_light {		
+		top:50%;
+		left:30%;
+		position: absolute;
+	}
+
+	.post-content #bathroom_light {		
+		top:50%;
+		left:50%;
+		position: absolute;
+	}
+
+	.post-content #kitchen_light {		
+		top:10%;
+		left:50%;
+		position: absolute;
+	}
+
+	.post-content #garage_light {	
+		top:10%;
+		left:70%;
+		position: absolute;
+	}
+
+	.post-content #outside1_light {		
+		top:75%;
+		left:90%;
+		position: absolute;
+	}
+
+	.post-content #outside2_light {		
+		top:75%;
+		left:50%;
+		position: absolute;
+	}
+	
+	/*Smartphone*/
+	
+	@media only screen and (min-width: 600px) and (max-width: 991px) {
+	    .przycisk {
+	        display: inline-block;
+	        width: 32.8%;
+	    }
+	    .przycisk.responsive {
+	        width: 49.5%;
+	        float: left;
+	        margin-right: 3px;
+	    }
+	    .przycisk.responsive-2 {
+	        width: 49.5%;
+	        float: right;
+	    }
+	    .przycisk-panel {
+	        display: inline-block;
+	        width: 10.8%;
+	    }
+	    .przycisk-panel.responsive {
+	        width: 15.5%;
+	        float: left;
+	        margin-right: 3px;
+	    }
+	    .przycisk-panel.responsive-2 {
+	        width: 15.5%;
+	        float: right;
+	    }
+	}
+	@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	    .przycisk-panel {
+	        padding-top: 5px;
+	        padding-bottom: 5px;
+	    }
+	    .przycisk-panel a i {
+	        font-size: 14px;
+	    }
+	    .przycisk-panel a p {
+	        font-size: 10px;
+	    }
+	    #content {
+	        margin-right: 0px;
+	    }
+	}
+	@media only screen and (min-width: 320px) and (max-width: 991px) {
+	    .footer-contact-info {
+	        margin-bottom: 30px;
+	        margin-top: 30px;
+	    }
+	}

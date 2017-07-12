@@ -1,0 +1,565 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+    <meta name="description" content="Praca inżynierska">
+    <meta name="author" content="Michał Drop">
+    <title>Smart House - Praca Inżynierska</title>
+	
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Czcionki CSS -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!-- Animacja CSS -->
+    <link href="css/animate.css" rel="stylesheet">
+    <!-- Czcionka -->
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <!-- Pliki JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdn.rawgit.com/Mikhus/canvas-gauges/gh-pages/download/2.1.0/all/gauge.min.js"></script> 
+    <script src="js/jquery.appear.js"></script>
+    <script src="js/modernizr.custom.js"></script>
+	<script src="js/knob.min.js"></script>
+	<script src="js/inz.js"></script>
+	<!-- CANVAS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
+	<!-- SWEETALERT -->
+	<script src="alertjs/sweetalert.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="alertjs/sweetalert.css">
+	
+	<!-- PLIK GŁÓWNY CSS -->
+	<link rel="stylesheet" type="text/css" href="css/inz.css">
+
+	
+		
+</head>
+
+<body onload="GetArduinoIO()">
+    <!-- Sekcja Główna Strony -->
+    <div class="mainbody-section text-center">
+    <!-- Sekcja 1 -->
+    <div class="row">
+        <!-- OŚWIETLENIE -->
+        <div class="col-md-3">
+            <div class="panel panel-default text-center">
+                <div class='panel-heading'>
+                    <i class='icon-beer icon-large'></i>
+                    <h4>Oświetlenie</h4>
+                    <div class='panel-tools'>
+                    </div>
+                </div>
+                <div class='panel-body'>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="przycisk gray pokoj1">
+                                <div id="LED_pokoj1" onclick="LedPokoj1()">
+                                    <i class="fa fa-lightbulb-o"></i>
+                                    <p>Pokój 1</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="przycisk gray pokoj2">
+                                <div id="LED_pokoj2" onclick="LedPokoj2()">
+                                    <i class="fa fa-lightbulb-o"></i>
+                                    <p>Pokój 2</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="przycisk gray kuchnia">
+                                <div id="LED_kuchnia" onclick="LedKuchnia()">
+                                    <i class="fa fa-lightbulb-o"></i>
+                                    <p>Kuchnia</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="przycisk gray lazienka">
+                                <div id="LED_lazienka" onclick="LedLazienka()">
+                                    <i class="fa fa-lightbulb-o"></i>
+                                    <p>Łazienka</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="przycisk gray garaz">
+                                <div id="LED_garaz" onclick="LedGaraz()">
+                                    <i class="fa fa-lightbulb-o"></i>
+                                    <p>Garaż</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="przycisk gray salon">
+                                <div id="LED_salon" onclick="Ledsalon()">
+                                    <i class="fa fa-lightbulb-o"></i>
+                                    <p>Salon</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="przycisk gray zewnatrz1">
+                                <div id="LED_zewnatrz1" onclick="LedZewnatrz1()">
+                                    <i class="fa fa-lightbulb-o"></i>
+                                    <p>Na zewnątrz</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="przycisk gray zewnatrz2">
+                                <div id="LED_zewnatrz2" onclick="LedZewnatrz2()">
+                                    <i class="fa fa-lightbulb-o"></i>
+                                    <p>Na zewnątrz</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default text-center">
+                <div class='panel-heading'>
+                    <i class='icon-beer icon-large'></i>
+                    <h4>Alarm</h4>
+                    <div class='panel-tools'>
+                    </div>
+                </div>
+                <div class='panel-body'>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Alarm Domowy</h4>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Alarm Pożarowy</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="przycisk-alarm green alarmdom">
+                                <div id="Alarm_house" onclick="AlarmHouse()">
+                                    <i class="fa fa-power-off"></i>
+                                    <p id="ahouse">Włącz</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="przycisk-alarm green alarmpozar">
+                                <div id="Alarm_fire" onclick="AlarmFire()">
+                                    <i class="fa fa-power-off"></i>
+                                    <p id="fire">Włącz</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="przycisk-pir gray center-block czujkapir">
+                                <div id="pir_alarm">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="przycisk-pir gray center-block czujkadymu">
+                                <div id="pir_fire">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="panel panel-default text-center">
+                <div class='panel-heading'>
+                    <i class='icon-beer icon-large'></i>
+                    <h4>Brama</h4>
+                    <div class='panel-tools'>
+                    </div>
+                </div>
+
+                <div class='panel-body'>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Brama Wjazdowa</h4>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Brama Garażowa</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="przycisk-brama green gatemain">
+                                <div id="Gate_main" onclick="GateMain()">
+                                    <i class="fa fa-car"></i>
+                                    <p id="gmain">Otwórz</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="przycisk-brama green gategarage">
+                                <div id="Gate_garage" onclick="GateGarage()">
+                                    <i class="fa fa-car"></i>
+                                    <p id="ggarage">Otwórz</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="przycisk-pir gray center-block pirMainGate">
+                                <div id="pir_mainGate">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="przycisk-pir gray center-block pirGarageGate">
+                                <div id="pir_garageGate">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- KONIEC-OŚWIETLENIE -->
+
+        <!-- WIDOK OGÓLNY -->
+
+        <div class="col-md-6">
+            <div class="panel panel-default text-center">
+                <div class='panel-heading'>
+                    <i class='icon-beer icon-large'></i>
+                    <h4>Widok Główny - WERSJA OKROJONA BEZ STEROWNIKA (DEMO)</h4>
+                    <div class='panel-tools'>
+                    </div>
+                </div>
+                <div class='panel-body'>
+                    <div class="center-block">
+							<div class="thumbnail">
+								<img src="images/mapka.png" class="img-responsive center-block" alt="obraz">
+									<div class="caption post-content">
+												<!-----------------------OŚWIETLENIE------------------------->
+													<img id = "salon_light" src="images/bulb.png"  />
+													<img id = "room1_light" src="images/bulb.png" />
+													<img id = "room2_light" src="images/bulb.png" />
+													<img id = "kitchen_light" src="images/bulb.png"/>
+													<img id = "bathroom_light" src="images/bulb.png" />
+													<img id = "garage_light" src="images/bulb.png"/>
+													<img id = "outside1_light" src="images/bulb.png" />
+													<img id = "outside2_light" src="images/bulb.png"/>
+									</div>
+							</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default text-center">
+                <div class='panel-heading'>
+                    <i class='icon-beer icon-large'></i>
+                    <h4>Klimatyzacja</h4>
+                    <div class='panel-tools'>
+                    </div>
+                </div>
+                <div class='panel-body'>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h4>Sterowanie Manualne</h4>
+                            <div class="przycisk-klima green center-block klima_m">
+                                <div id="Air_manual" onclick="AirManual()">
+                                    <i class="fa fa-power-off"></i>
+                                    <p id = "manual">Włącz</p>
+                                </div>
+                            </div>
+                            <h4>Sterowanie Automatyczne</h4>
+                            <div class="przycisk-klima green center-block klima_a">
+                                <div id="Air_auto" onclick="AirAuto()">
+                                    <i class="fa fa-power-off"></i>
+                                    <p id = "auto">Włącz</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <h4>Stan</h4>
+                            <div class="przycisk-stanKlima gray center-block stan_klimatyzacji">
+                                <div id="stan_klima">
+                                    <i class="fa fa-sun-o" aria-hidden="true"></i>
+                                    <p id = "stan_chlodzenie">...</p>
+                                </div>
+                            </div>
+                            <h4>Temperatura - Salon</h4>
+                            <div class="przycisk-pomiar_temp blue-dark center-block">
+                                <div id="pomiar_temp">
+                                    <i class=""><p><span id="odczyt_tempwewn">0</span> 'C</p></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <h4>Temperatura Zadana</h4>
+                            <input type="text" class="dial" value="21">
+                            <script>
+                                $(function() {
+                                    $(".dial").knob({
+                                        'width': 140,
+                                        'height': 140,
+                                        'min': 14,
+                                        'max': 30,
+                                        'angleOffset': -125,
+                                        'angleArc': 250,
+                                        'displayPrevious': 'true'
+                                    });
+                                });
+                            </script>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- KONIEC-WIDOK-OGÓLNY -->
+
+
+        <!-- DRZWI -->
+        <div class="col-md-3">
+            <div class="panel panel-default text-center">
+                <div class='panel-heading'>
+                    <i class='icon-beer icon-large'></i>
+                    <h4>Drzwi</h4>
+                    <div class='panel-tools'>
+                    </div>
+                </div>
+                <div class='panel-body'>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="przycisk-door green doors">
+                                <div id="Door_glowne">
+                                    <i class="fa fa-key"></i>
+                                    <p>Główne<span id="drzwi_stan"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="przycisk-door green doors">
+                                <div id="Door_glowne">
+                                    <i class="fa fa-key"></i>
+                                    <p>Pokój 1<span id="drzwi_stan"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="przycisk-door light-red doors">
+                                <div id="Door_glowne">
+                                    <i class="fa fa-key"></i>
+                                    <p>Pokój 2<span id="drzwi_stan"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="przycisk-door light-red doors">
+                                <div id="Door_glowne">
+                                    <i class="fa fa-key"></i>
+                                    <p>Kuchnia<span id="drzwi_stan"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="przycisk-door light-red doors">
+                                <div id="Door_glowne">
+                                    <i class="fa fa-key"></i>
+                                    <p>Łazienka<span id="drzwi_stan"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="przycisk-door light-red doors">
+                                <div id="Door_glowne">
+                                    <i class="fa fa-key"></i>
+                                    <p>Salon<span id="drzwi_stan"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default text-center">
+                <div class='panel-heading'>
+                    <i class='icon-beer icon-large'></i>
+                    <h4>Informacje</h4>
+                    <div class='panel-tools'>
+                    </div>
+                </div>
+
+                <div class='panel-body'>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="przycisk-godzina light-red">
+                                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                <p id="czas"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h4>Temp. Zewn.</h4>
+                                <div class="przycisk-informacje blue-dark center-block">
+                                    <div id="temp_zewn">
+                                        <i class=""><p><span id="odczyt_tempzewn">0</span> 'C</p></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>Temp. Wewn.</h4>
+                                <div class="przycisk-informacje blue-dark center-block">
+                                    <div id="temp_wewntrz">
+                                        <i class=""><p><span id="odczyt_tempwewn">0</span> 'C</p></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>Wilgotność</h4>
+                                <div class="przycisk-informacje blue-dark center-block">
+                                    <div id="wilgotnosc">
+                                        <i class=""><p><span id="odczyt_wilgotnosc">0</span> %RH</p></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Stężenie dymu (Kuchnia)</h4>
+                                <div class="przycisk-informacje blue-dark center-block">
+                                    <div id="stezenie_dymu">
+                                        <i class=""><p><span id="odczyt_dymu">0</span></p></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Stężenie CO (Garaż)</h4>
+                                <div class="przycisk-informacje blue-dark center-block">
+                                    <div id="stezenie_co">
+                                        <i class=""><p><span id="odczyt_co">0</span> ppm</p></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <h4>Roleta</h4>
+                            <div class="przycisk-roleta green roleta">
+                                <div id="Roleta" onclick="GateRoleta()">
+                                    <i class="fa fa-columns"></i>
+                                    <p id="roletka">Roleta</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>ZDJĘCIA MAKIETY</h4>
+                            <div class="przycisk-monitoring blue monitoring">
+                                <div id="Monitoring">
+                                    <i class="fa fa-video-camera"></i>
+                                    <p id="monitor">Więcej</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	    <!-- MONITORING -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content" style = "width: 90vw;float: left;left: -26vw;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">ZDJĘCIA</h4>
+                </div>
+                <div class="modal-body">
+					<div class="row">
+                        <div class="col-md-3">
+							<img src="makieta/Obraz1.jpg" class="img-rounded" alt="obraz1" width="304" height="240"> 
+                        </div>
+                        <div class="col-md-3">
+							<img src="makieta/Obraz2.jpg" class="img-rounded" alt="obraz2" width="304" height="240"> 
+                        </div>
+						<div class="col-md-3">
+							<img src="makieta/Obraz3.jpg" class="img-rounded" alt="obraz3" width="304" height="240"> 
+                        </div>
+						<div class="col-md-3">
+							<img src="makieta/Obraz4.jpg" class="img-rounded" alt="obraz4" width="304" height="240"> 
+                        </div>						
+                    </div>
+					<br>
+					<div class="row">
+                        <div class="col-md-3">
+							<img src="makieta/Obraz5.jpg" class="img-rounded" alt="obraz5" width="304" height="240"> 
+                        </div>
+                        <div class="col-md-3">
+							<img src="makieta/Obraz6.jpg" class="img-rounded" alt="obraz6" width="304" height="240"> 
+                        </div>
+						<div class="col-md-3">
+							<img src="makieta/Obraz7.jpg" class="img-rounded" alt="obraz7" width="304" height="240"> 
+                        </div>
+						<div class="col-md-3">
+							<img src="makieta/Obraz8.jpg" class="img-rounded" alt="obraz8" width="304" height="240"> 
+                        </div>						
+                    </div>
+					<br>
+					<div class="row">
+                        <div class="col-md-3">
+							<img src="makieta/Obraz9.jpg" class="img-rounded" alt="obraz9" width="304" height="240"> 
+                        </div>
+                        <div class="col-md-3">
+							<img src="makieta/Obraz10.jpg" class="img-rounded" alt="obraz10" width="304" height="240"> 
+                        </div>
+						<div class="col-md-3">
+							<img src="makieta/Obraz11.jpg" class="img-rounded" alt="obraz11" width="304" height="240"> 
+                        </div>
+						<div class="col-md-3">
+							<img src="makieta/Obraz12.jpg" class="img-rounded" alt="obraz12" width="304" height="240"> 
+                        </div>						
+                    </div>	
+					<br>
+					<div class="row">
+                        <div class="col-md-12">
+							<img src="makieta/Obraz14.jpg" class="img-rounded" alt="obraz14" width="1000" height="300"> 
+                        </div>				
+                    </div>						
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Zamknij</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+
+</html>
